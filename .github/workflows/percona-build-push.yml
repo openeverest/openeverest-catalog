@@ -16,7 +16,7 @@ jobs:
       EVEREST_CATALOG_DEV_IMAGE_NAME: 'openeverest-catalog-dev'
     steps:
       - name: Check out
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Docker meta
         id: meta
