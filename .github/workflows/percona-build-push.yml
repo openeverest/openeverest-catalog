@@ -5,11 +5,15 @@ on:
     branches:
       - main
 
-jobs:
+env:
+  REGISTRY: ghcr.io
 
+jobs:
   build:
     runs-on: ubuntu-latest
-
+    env:
+      IMAGE_PREFIX: 'ghcr.io/openeverest'
+      EVEREST_CATALOG_DEV_IMAGE_NAME: 'openeverest-catalog-dev'
     steps:
       - name: Check out
         uses: actions/checkout@v4
@@ -19,7 +23,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            perconalab/everest-catalog
+            ${{ env.IMAGE_PREFIX }}/${{ env.EVEREST_CATALOG_DEV_IMAGE_NAME }}
           tags: |
             type=raw,value=0.0.0,enable=${{ contains(github.ref_name, 'main') }}
             type=raw,value=latest,enable=${{ contains(github.ref_name, 'main') }}
@@ -27,8 +31,9 @@ jobs:
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and Push image
         uses: docker/build-push-action@v6
