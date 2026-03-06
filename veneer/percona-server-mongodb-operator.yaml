@@ -4,5 +4,5 @@ GenerateMinorChannels: false
 Stable:
   Bundles:
   - Image: docker.io/percona/percona-server-mongodb-operator:1.21.2-community-bundle
-  - Image: quay.io/operatorhubio/percona-server-mongodb-operator:v1.22.0
+  - Image: docker.io/percona/percona-server-mongodb-operator:1.22.0-community-bundle
 

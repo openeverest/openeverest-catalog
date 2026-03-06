@@ -110,7 +110,7 @@ relatedImages:
   name: ""
 schema: olm.bundle
 ---
-image: quay.io/operatorhubio/percona-server-mongodb-operator:v1.22.0
+image: docker.io/percona/percona-server-mongodb-operator:1.22.0-community-bundle
 name: percona-server-mongodb-operator.v1.22.0
 package: percona-server-mongodb-operator
 properties:
@@ -203,6 +203,6 @@ properties:
 relatedImages:
 - image: docker.io/percona/percona-server-mongodb-operator:1.22.0
   name: ""
-- image: quay.io/operatorhubio/percona-server-mongodb-operator:v1.22.0
+- image: docker.io/percona/percona-server-mongodb-operator:1.22.0-community-bundle
   name: ""
 schema: olm.bundle
