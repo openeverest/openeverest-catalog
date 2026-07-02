@@ -11,6 +11,7 @@ schema: olm.channel
 ---
 entries:
 - name: percona-postgresql-operator.v3.0.0
+  replaces: percona-postgresql-operator.v2.9.0
 name: stable-v3
 package: percona-postgresql-operator
 schema: olm.channel

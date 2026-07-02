@@ -46,7 +46,7 @@ endif
 .PHONY: render-postgresql-operator-catalog
 render-postgresql-operator-catalog: opm ## Render the postgresql-operator catalog.
 	@echo "Rendering postgresql-operator catalog"
-	$(OPM) alpha render-template semver -o yaml ./veneer/percona-postgresql-operator.yaml > ./catalog/percona-postgresql-operator/catalog.yaml
+	$(OPM) alpha render-template basic -o yaml ./veneer/percona-postgresql-operator.yaml > ./catalog/percona-postgresql-operator/catalog.yaml
 
 .PHONY: render-psmdb-operator-catalog
 render-psmdb-operator-catalog: opm ## Render the psmdb-operator catalog.
