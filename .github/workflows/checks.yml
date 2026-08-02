@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - name: Check default main state - generated files for postgresql-operator
         run: |
@@ -34,7 +34,7 @@ jobs:
           git diff --exit-code
 
       - name: Build image to check it for vulnerabilities
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6.19.2
         with:
           context: .
           push: false
