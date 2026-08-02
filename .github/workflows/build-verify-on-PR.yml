@@ -11,9 +11,9 @@ jobs:
     
     steps:
       - name: Check out
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
   
       - name: Validate Contribution
-        uses: joelanford/opm-validate@main
+        uses: joelanford/opm-validate@1cc529703fd0d46b2eb2b23ea9b561a040f4ca5c # v0.1.0
         with:
           catalog: catalog
